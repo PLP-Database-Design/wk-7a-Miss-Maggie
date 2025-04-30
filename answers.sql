@@ -1,11 +1,11 @@
-USE store;
--- Question 1 Converting the table into 1NFM
-CREATE TABLE ProductDetail(
+
+-- Question 1 Converting table ProductDetail into 1NFM
+-- Create a new 1NF table
+CREATE TABLE ProductDetail_1NF(
     OrderID INT NOT NULL,
     CustomerName VARCHAR(50),
     Products VARCHAR(100)
 );
-
 INSERT INTO ProductDetail(OrderID, CustomerName, Products)
 VALUES  (101, 'John Doe', 'Laptop'),
         (101, 'John Doe', 'Mouse'),
@@ -13,6 +13,7 @@ VALUES  (101, 'John Doe', 'Laptop'),
         (102, 'Jane Smith', 'Keyboard'),
         (102, 'Jane Smith', 'Mouse'),
         (103, 'Emily Clark', 'Phone');
+
 
 -- Question 2 Converting the table into 2NFM
 CREATE TABLE Orders(
@@ -25,7 +26,7 @@ VALUES  (101, 'John Doe'),
         (102, 'Jane Smith'),
         (103, 'Emily Clark');
 
-CREATE TABLE Products(
+CREATE TABLE OrderItems(
     OrderID INT,
     ProductName VARCHAR(50),
     Quantity INT,
